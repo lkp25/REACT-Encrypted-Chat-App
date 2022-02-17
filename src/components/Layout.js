@@ -70,6 +70,11 @@ export default function Layout({ children }) {
       icon: <AddCircleOutlineOutlined color="secondary" />,
       path: "/create",
     },
+    {
+      text: "Chat",
+      icon: <AddCircleOutlineOutlined color="secondary" />,
+      path: "/chat",
+    },
   ];
 
   return (
