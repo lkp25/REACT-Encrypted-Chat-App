@@ -1,0 +1,53 @@
+.chat-subcontainer {
+  background-color: rgb(216, 241, 241);
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+.chatBorders {
+  border: 1px solid black;
+}
+
+/* header panel */
+.chat-header-panel {
+  display: flex;
+
+  justify-content: space-between;
+}
+/* tabs */
+.chatTabs-container {
+  display: flex;
+}
+.chatTabs-single-tab {
+  display: flex;
+  padding: 0.3rem;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.chatTabs-active-tab {
+  background-color: rgb(231, 180, 118);
+}
+.chatTabs-fresh-msg {
+  color: blue;
+  font-weight: bold;
+}
+/* display */
+
+/* list */
+
+.chatList-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* input */
+.chatInput-btn-container {
+  display: flex;
+}
+/* msg */
+.chatMsg-container {
+  padding: 0.5rem;
+}
+.hostMsg {
+  background-color: rgb(245, 239, 205);
+  text-align: right;
+}

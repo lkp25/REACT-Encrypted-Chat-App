@@ -10,6 +10,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { purple } from "@mui/material/colors";
 import Chat from "./pages/Chat";
 
+import { chatContext, ChatContextProvider } from "./chatContext/ChatContext";
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -45,27 +47,21 @@ const useStyles = makeStyles({
   },
 });
 
-const ws = new WebSocket("ws://127.0.0.1:9876/websocket");
-ws.onopen = () => {
-  ws.send("CLIENT INITIAL MSG");
-};
-
-ws.onmessage = (event) => {
-  console.log(event.data);
-};
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Notes />}></Route>
-            <Route path="/create" element={<CreateNote />}></Route>
-            <Route path="/chat" element={<Chat />}></Route>
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </ThemeProvider>
+    <ChatContextProvider>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Notes />}></Route>
+              <Route path="/create" element={<CreateNote />}></Route>
+              <Route path="/chat" element={<Chat />}></Route>
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </ThemeProvider>
+    </ChatContextProvider>
   );
 }
 

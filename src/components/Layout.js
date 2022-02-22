@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => {
       width: drawerWidth,
     },
     active: {
-      background: "red",
+      background: "lightblue",
     },
     appbar: {
       background: "red",
@@ -83,7 +83,10 @@ export default function Layout({ children }) {
 
       <AppBar
         sx={{ boxShadow: 10 }}
-        style={{ color: "gray", width: `calc(100% - ${drawerWidth}px)` }}
+        style={{
+          backgroundColor: "#ddd",
+          width: `calc(100% - ${drawerWidth}px)`,
+        }}
         className={classes.appbar}
         elevation={0}
       >
@@ -91,7 +94,7 @@ export default function Layout({ children }) {
           <Typography className={classes.date}>
             Today is the {format(new Date(), "do MMMM Y")}
           </Typography>
-          <Typography>Mario</Typography>
+          <Typography>DV</Typography>
           <Avatar className={classes.avatar} src="/dv.png"></Avatar>
         </Toolbar>
       </AppBar>
@@ -105,7 +108,7 @@ export default function Layout({ children }) {
       >
         <div>
           <Typography variant="h5" className={classes.title}>
-            Ninja Notes
+            Dummy Menu
           </Typography>
         </div>
 
